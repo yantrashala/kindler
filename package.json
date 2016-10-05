@@ -1,0 +1,46 @@
+{
+  "name": "kindler",
+  "version": "0.0.1",
+  "description": "A lightweight chat bot friend",
+  "main": "app.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yantrashala/kindler.git"
+  },
+  "dependencies": {
+    "botmaster": "^1.1.2",
+    "config": "^1.21.0",
+    "express": "^4.14.0",
+    "node-wit": "^4.1.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "chatbot",
+    "chat",
+    "friend",
+    "botmaster",
+    "messenger",
+    "bots",
+    "ai",
+    "integration"
+  ],
+  "files": [
+    "index.js",
+    "lib",
+    "README.md"
+  ],
+  "contributors": [
+    {
+      "name": "Puttaiah Arugunta",
+      "url": "https://github.com/puttareddy"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/yantrashala/kindler/issues"
+  },
+  "homepage": "https://github.com/yantrashala/kindler#readme"
+}
