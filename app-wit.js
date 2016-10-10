@@ -5,7 +5,7 @@ const SessionStore = Botmaster.storage.MemoryStore;
 const express = require('express');
 const config = require('config');
 const app = express();
-const botEngine = require('./botEngine');
+const WitEngine = require('./ai/wit-engine');
 
 // Webserver parameter
 const PORT = process.env.PORT || 8445;
@@ -63,7 +63,7 @@ const botmaster = new Botmaster(botmasterSettings);
 // actual code
 botmaster.on('update', (bot, update) => {
     const session = update.session;
-    const wit = new botEngine(WIT_TOKEN, bot, update);
+    const wit = new WitEngine(WIT_TOKEN, bot, update);
 
     // Let's forward the message to the Wit.ai Bot Engine
     // This will run all actions until our bot has nothing left to do

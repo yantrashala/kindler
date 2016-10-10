@@ -11,8 +11,6 @@ COPY . /usr/src/app
 RUN cd /usr/src/app
 RUN npm install
 
-# Bundle app source
-COPY . /usr/src/app
-
+# Expose the default 3000 port to run the application
 EXPOSE 3000
 CMD [ "npm", "start" ]

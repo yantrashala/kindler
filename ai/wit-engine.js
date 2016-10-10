@@ -128,7 +128,7 @@ const firstEntityValue = (entities, entity) => {
 };
 
 
-function botEngine(accessToken, bot, update) {
+function WitEngine(accessToken, bot, update) {
   actions.update = update
   actions.bot = bot
   return new Wit(
@@ -138,4 +138,4 @@ function botEngine(accessToken, bot, update) {
   });
 }
 
-module.exports = botEngine;
+module.exports = WitEngine;

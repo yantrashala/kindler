@@ -4,6 +4,7 @@ const Botmaster = require('botmaster');
 const SessionStore = Botmaster.storage.MemoryStore;
 const express = require('express');
 const config = require('config');
+const CustomMessangerBot = require('./messanger/custom-bot');
 const app = express();
 
 // Webserver parameter
@@ -19,10 +20,6 @@ if (!FB_VERIFY_TOKEN) { throw new Error('missing FB_VERIFY_TOKEN') }
 const FB_WEB_HOOK = process.env.FB_WEB_HOOK ? process.env.FB_WEB_HOOK : config.get('fbWebhookEndpoint');
 if (!FB_WEB_HOOK) { throw new Error('missing FB_WEB_HOOK') }
 
-//Token to integrate with weather api
-const WEATHER_API_KEY = process.env.WEATHER_API_KEY ? process.env.WEATHER_API_KEY : config.get('weatherApiKey');
-if (!WEATHER_API_KEY) { throw new Error('missing WEATHER_API_KEY') }
-
 //botmaster settings
 const messengerSettings = {
   credentials: {
@@ -33,7 +30,7 @@ const messengerSettings = {
   webhookEndpoint: FB_WEB_HOOK, // botmaster will mount this webhook on  https://92ce93f2.ngrok.io/messenger/webhook1234
 };
 
-const botsSettings = [{ messenger: messengerSettings }];
+const botsSettings = [];
 
 const botmasterSettings = {
   botsSettings: botsSettings,
@@ -44,18 +41,12 @@ const botmasterSettings = {
 
 const botmaster = new Botmaster(botmasterSettings);
 
+const messangerBot = new CustomMessangerBot(messengerSettings);
+botmaster.addBot(messangerBot);
+
 // actual code
 botmaster.on('update', (bot, update) => {
-  console.log('update--message is received---',update)
-
-    bot.sendMessage({
-      recipient: {
-        id: update.sender.id,
-      },
-      message: {
-        text: 'Well right back at you..! '+update.message.text,
-      },
-    });
+    bot.sendMessage(update);
 });
 
 botmaster.on('error', (bot, err) => {
