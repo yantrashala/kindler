@@ -1,3 +1,5 @@
+'use strict';
+
 const Botmaster = require('botmaster');
 const MessengerBot = Botmaster.botTypes.MessengerBot;
 const messageTmpl = require('./template')
