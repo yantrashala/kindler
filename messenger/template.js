@@ -92,7 +92,7 @@ function receivedAuthentication(event) {
 
   // When an authentication is received, we'll send a message back to the sender
   // to let them know it was successful.
-  sendTextMessage(senderID, "Authentication successful");
+  return sendTextMessage(senderID, "Authentication successful");
 }
 
 /*

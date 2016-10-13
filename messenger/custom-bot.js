@@ -14,6 +14,7 @@ class CustomMessengerBot extends MessengerBot {
       for (const entry of entries) {
 
         const updates = entry.messaging;
+        console.log('enties are%%%%%%%%%%%%', entry.messaging)
         entry.messaging = null;
 
         for (const update of updates) {

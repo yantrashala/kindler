@@ -4,7 +4,7 @@ const Botmaster = require('botmaster');
 const SessionStore = Botmaster.storage.MemoryStore;
 const express = require('express');
 const config = require('config');
-const CustomMessangerBot = require('./messanger/custom-bot');
+const CustomMessangerBot = require('./messenger/custom-bot');
 const app = express();
 
 // Webserver parameter
@@ -46,7 +46,9 @@ botmaster.addBot(messangerBot);
 
 // actual code
 botmaster.on('update', (bot, update) => {
-    bot.sendMessage(update);
+    if(typeof update!== 'undefined' && typeof update.recipient !== 'undefined'){
+      bot.sendMessage(update);
+  }
 });
 
 botmaster.on('error', (bot, err) => {
