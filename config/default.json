@@ -1,0 +1,10 @@
+{
+    "fbAppSecret": "f289b37fa413dbd76519967ddd547f5d",
+    "fbPageToken": "EAAPJRjH6xCgBAB0WhtjXMr4YBzusyZCC8a9vJOomdZCI0vy75EB1gIxK1rq1RsyiLZBO1AZAq3sNNG2ch0pClbSqWC2lKkLZA78gWiXlZAvka2K0G7dUQ8XB5y0nypLXhxF9H80BfLvhwKVlYuZCmRMkswHZBe31JU5ND4uu6h3K8QZDZD",
+    "fbVerifyToken": "my_voice_is_my_password_verify_me",
+    "fbWebhookEndpoint":"/webhook1234",
+    "fbDomainServerURL":"https://messengerdemo.parseapp.com/",
+    
+    "weatherApiKey":"0ca5e35bfd0a2506e51b1ec09e4addec",
+    "witToken":"J2YLJCW4QWEOCMSHYI5OCKHF5RTYUUMZ"
+}
